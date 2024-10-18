@@ -107,6 +107,9 @@ function DrawingBoardController() {
     board.addEventListener("mouseup", (e) => {
       isMouseDown = false;
     });
+    board.addEventListener("mouseleave", (e) => {
+      isMouseDown = false;
+    });
 
     changeSizeBtn.addEventListener("click", (e) => {
       generateNewBoard(changeSizeInput.value);
