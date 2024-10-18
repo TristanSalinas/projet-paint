@@ -33,6 +33,9 @@ function initPalette(palette) {
     palletteInput.value = element;
     palletteInput.style.backgroundColor = element;
 
+    palletteInput.addEventListener("click", (e) => {
+      selectColor(e);
+    });
     palletteInput.addEventListener("input", (e) => {
       palletteInput.style.backgroundColor = palletteInput.value;
 
@@ -73,7 +76,13 @@ function DrawingBoardController() {
       for (let j = 0; j < dimensions; j++) {
         const cell = document.createElement("div");
         cell.classList.add("col-" + j);
-
+        cell.addEventListener("mousedown", (e) => {
+          if (gomme.checked) {
+            cell.style.backgroundColor = "";
+          } else {
+            cell.style.backgroundColor = getSelectedColor();
+          }
+        });
         cell.addEventListener("mouseover", (e) => {
           if (isMouseDown) {
             if (gomme.checked) {
