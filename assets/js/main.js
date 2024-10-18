@@ -77,6 +77,7 @@ function DrawingBoardController() {
         const cell = document.createElement("div");
         cell.classList.add("col-" + j);
         cell.addEventListener("mousedown", (e) => {
+          e.preventDefault();
           if (gomme.checked) {
             cell.style.backgroundColor = "";
           } else {
@@ -136,6 +137,7 @@ window.addEventListener("DOMContentLoaded", function () {
     "#f783f2",
     "#e89e80",
   ]);
+
   const drawingBoard = DrawingBoardController();
   drawingBoard.init(20);
 });
