@@ -46,7 +46,7 @@ function initPalette(palette) {
   gomme.id = "gomme";
   const gommeLabel = document.createElement("label");
   gommeLabel.setAttribute("for", "gomme");
-
+  gommeLabel.textContent = "GOMME";
   header.append(gomme);
   header.append(gommeLabel);
 }
